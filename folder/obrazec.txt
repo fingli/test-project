@@ -1,5 +1,3 @@
-----
-
 Missing required features
 => Missing license [The theme must clearly indicate GPL or a GPL-compatible license]
 => Missing add_theme_support( 'automatic-feed-links' ) [This should be called in the theme's functions.php file. Present RSS links in header.php should be removed, ATOM is ok]
