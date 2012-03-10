@@ -1,0 +1,55 @@
+Missing required features
+=> Missing license [The theme must clearly indicate GPL or a GPL-compatible license]
+=> Missing add_theme_support( 'automatic-feed-links' ) [This should be called in the theme's functions.php file. Present RSS links in header.php should be removed, ATOM is ok]
+=> Missing comment_form() 
+[Theme must include this hook in comments.php, instead of writting own form. For more details and customization read the description in http://codex.wordpress.org/Template_Tags/comment_form ]
+Example: 
+<?php 
+$args = array(
+	'comment_field' => '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>',
+	'comment_notes_after' => ''
+);
+comment_form($args); ?>
+=> Global content width must be defined in functions.php
+ Example: 
+if ( ! isset( $content_width ) )
+	$content_width = 640; // Should be equal to the width the theme is designed for
+=> Custom menu with wp_nav_menu() is a must [replacing wp_list_pages, wp_list_categories, wp_page_menu, etc. as a menubar system]. Read more at http://codex.wordpress.org/Function_Reference/wp_nav_menu
+=> Presence of 'include (TEMPLATEPATH . "/searchform.php");' [must be replaced with get_search_form() ]
+=> wp_head(); must be immediately before </head> 
+=> wp_footer(); must be immediately before </body> in footer.php
+=> Missing body_class() inside <body> tag 
+Example  
+<body <?php body_class(); ?>>
+=> Missing post_class() inside <div id="post"> 
+
+<!-- trlslss -->
+******************
+---
+
+This is a tertiary review. Next reviewer might find more so please do everything you can to adhere to the documentation on what is accepted in the theme review.
+
+- Developer needs to thoroughly read the  [http://codex.wordpress.org/Theme_Review Theme Review] and find all the must-haves and update their theme(s) accordingly, this theme will continue to not pass until all requirements are met.
+- It's useful if the authors check their themes with [http://wordpress.org/extend/plugins/theme-check/ Theme-Check plugin] and with set WP_DEBUG to 'true' in wp-config.php
+
+
+Items marked with => are reasons for not being approved
+Items marked with / are just suggestions
+Items marked with - are notes
+
+Once the points above have been addressed appropriately using the available information found at the links above; please thoroughly review your theme and re-submit it using the uploader tool:  http://wordpress.org/extend/themes/upload/ this will generate a new Trac ticket.
+----
+'''Responding To This Review'''
+
+Theme developer questions, comments, and feedback are welcome and encouraged. Please use one of the following methods:
+
+    1) Leave a comment on this ticket
+    2) Email the theme-reviewers email list
+    3) Use the #wordpress-themes channel on irc.freenode.net (or via  http://webchat.freenode.net/)
+
+
+
+
+**************************************************************
+
+
